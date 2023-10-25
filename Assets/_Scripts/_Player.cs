@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _Player : MonoBehaviour
+public class _Player : _Sounds
 {
     public Rigidbody2D rb;
     public int jumpForce;
