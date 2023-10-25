@@ -8,6 +8,13 @@ TagManager:
   - Ship
   - PortalGravity3
   - PortalGravity4
+  - Orb1
+  - PortalGravity1
+  - PortalFly1
+  - Jump1
+  - PortalFly2
+  - PortalGravity2
+  - Coin
   layers:
   - Default
   - TransparentFX
