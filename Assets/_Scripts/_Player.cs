@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _Player : MonoBehaviour
+public class _Player : _Sounds
 {
     public Rigidbody2D rb;
     public int jumpForce;
@@ -23,6 +23,9 @@ public class _Player : MonoBehaviour
     public float flyForce;//с какой силой мы летаем
 
     public float cast;// отвечает за подкидывание обьекта
+
+
+    public GameObject Samolet;//samolet
 
 
     private void Start()
@@ -150,12 +153,15 @@ public class _Player : MonoBehaviour
         if (collision.collider.CompareTag("PortalFly1"))
         {
             onFly = true;
+            Samolet.SetActive(true);
+            sprite.rotation = Quaternion.Euler(0, 0,0);
             Destroy(collision.gameObject);
         }
 
         if (collision.collider.CompareTag("PortalFly2"))
         {
             onFly = false;
+            Samolet.SetActive(false);
             Destroy(collision.gameObject);
         }
 
