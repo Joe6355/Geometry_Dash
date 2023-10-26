@@ -25,6 +25,9 @@ public class _Player : _Sounds
     public float cast;// отвечает за подкидывание обьекта
 
 
+    public GameObject Samolet;//samolet
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -150,12 +153,15 @@ public class _Player : _Sounds
         if (collision.collider.CompareTag("PortalFly1"))
         {
             onFly = true;
+            Samolet.SetActive(true);
+            sprite.rotation = Quaternion.Euler(0, 0,0);
             Destroy(collision.gameObject);
         }
 
         if (collision.collider.CompareTag("PortalFly2"))
         {
             onFly = false;
+            Samolet.SetActive(false);
             Destroy(collision.gameObject);
         }
 
