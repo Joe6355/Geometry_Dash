@@ -155,6 +155,7 @@ public class _Player : _Sounds
             onFly = true;
             Samolet.SetActive(true);
             sprite.rotation = Quaternion.Euler(0, 0,0);
+            PlaySound(sounds[0], destroyed: true);
             Destroy(collision.gameObject);
         }
 
@@ -162,6 +163,7 @@ public class _Player : _Sounds
         {
             onFly = false;
             Samolet.SetActive(false);
+            PlaySound(sounds[0], destroyed: true);// проиграть звук самолетика
             Destroy(collision.gameObject);
         }
 
