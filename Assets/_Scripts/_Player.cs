@@ -27,9 +27,12 @@ public class _Player : _Sounds
 
     public GameObject Samolet;//samolet
 
+    public GameObject FinishLevel;//фигнюшка для финала уровня
+
 
     private void Start()
     {
+        Time.timeScale = 1;//страховка от неожиданных последствий
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -177,6 +180,12 @@ public class _Player : _Sounds
         {
             rb.velocity = new Vector2(rb.velocity.x, cast);
             Destroy(collision.gameObject);
+        }
+        if (collision.collider.CompareTag("Finish"))//отвечает за концовку уровня
+        {
+            FinishLevel.SetActive(true);
+            Time.timeScale = 0;
+            Destroy(gameObject);
         }
     }
     private void Rotate()
